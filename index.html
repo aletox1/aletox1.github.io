@@ -5,7 +5,7 @@
  <body>
 <?php
 $arrFiles = array();
-$handle = opendir('/apk');
+$handle = opendir('apk/');
 if ($handle) {
     while (($entry = readdir($handle)) !== FALSE) {
         $arrFiles[] = $entry;
