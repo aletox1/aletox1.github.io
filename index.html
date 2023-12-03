@@ -3,6 +3,15 @@
   <title>Prueba de PHP</title>
  </head>
  <body>
- <?php echo '<p>Hola Mundo</p>'; ?>
+<?php
+$arrFiles = array();
+$handle = opendir('/apk');
+if ($handle) {
+    while (($entry = readdir($handle)) !== FALSE) {
+        $arrFiles[] = $entry;
+    }
+}
+closedir($handle);
+?>
  </body>
 </html>
