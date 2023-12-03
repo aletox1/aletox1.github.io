@@ -1,3 +1,8 @@
+<html>
+ <head>
+  <title>Prueba de PHP</title>
+ </head>
+ <body>
 <?php
 $arrFiles = array();
 $handle = opendir('/apk');
@@ -8,3 +13,6 @@ if ($handle) {
 }
 closedir($handle);
 ?>
+ </body>
+</html>
+
