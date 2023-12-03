@@ -1,17 +1,19 @@
-<html>
- <head>
-  <title>Prueba de PHP</title>
- </head>
- <body>
 <?php
-$arrFiles = array();
-$handle = opendir('apk/');
-if ($handle) {
-    while (($entry = readdir($handle)) !== FALSE) {
-        $arrFiles[] = $entry;
+$directorio = '/apk'; // Reemplaza '/ruta/del/directorio' con la ruta del directorio que deseas listar
+
+if (is_dir($directorio)) {
+    if ($gestor = opendir($directorio)) {
+        echo "Archivos en el directorio '$directorio':<br>";
+        while (($archivo = readdir($gestor)) !== false) {
+            if ($archivo != "." && $archivo != "..") {
+                echo "$archivo<br>";
+            }
+        }
+        closedir($gestor);
+    } else {
+        echo "No se pudo abrir el directorio.";
     }
+} else {
+    echo "La ruta especificada no es un directorio válido.";
 }
-closedir($handle);
 ?>
- </body>
-</html>
